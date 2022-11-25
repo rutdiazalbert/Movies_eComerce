@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Movies_eCommerce.Models
 {
-    public class Actor: IEntityBase
+    public class Producer : IEntityBase
     {
         [Key]
         public int Id { get; set; }
@@ -18,11 +18,10 @@ namespace Movies_eCommerce.Models
         public string FullName { get; set; }
 
         [Display(Name = "Biography")]
-        [Required(ErrorMessage = "Bio is required")]
+        [Required(ErrorMessage = "Biography is required")]
         public string Bio { get; set; }
 
         //Relationships
-        public List<Actor_Movie>? Actors_Movies { get; set; }
-        
+        public List<Movie>? Movies { get; set; }
     }
 }
